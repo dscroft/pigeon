@@ -1,0 +1,42 @@
+<html>
+<head>
+	<title>Pigeon v2 Demo</title>
+	<script type="text/javascript" src="js/imagenet_classes.js"></script> 
+	<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>  
+	<script type="text/javascript" src="js/mobile-net.js"></script>
+</head>
+<body>
+	<script>
+		window.onload = function()
+		{
+			loader = document.getElementById("progress-box");
+			loader.style.display = "block";
+			loadModel();
+			loader.style.display = "none";
+		};
+	</script>
+
+	<div class="container">
+		<h3>Pigeon v2 Demo</h3>
+
+		<div id="progress-box" style="width: 100%;">
+			<p>Loading model..</p>
+		</div>
+
+		<div id="controls">
+			<input id="select-file-image" type="file" onchange="loadFile(event)" >
+			<button id="predict-button" onclick="predButton()">Predict</button>
+		</div>
+
+		<div class="output">
+			<div id="select-file-box" style="display: none;">
+				<img id='test-image' style="width: 200px; height: 300px; object-fit: contain" />
+			</div>
+			<div id="prediction" style="">
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>
